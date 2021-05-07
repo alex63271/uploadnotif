@@ -16,10 +16,10 @@ namespace uploadnotif
         {
 
             string s2 = Convert.ToString(Guid.NewGuid());   //генерация гуида уведомления
-            DateTime BirthDatePledgor = new DateTime(1980, 12, 12); //задание даты рождения залогодателя пп
+            DateTime BirthDatePledgor = new DateTime(1980, 12, 12); //задание даты рождения залогодателя
             DateTime DateContract = new DateTime(2005, 09, 12);
             DateTime BirthDateApplicant = new DateTime(1970, 04, 14);
-            XNamespace xNs = "http://fciit.ru/eisn/ruzdi/types/2.3"; //создание нэймспейса для документа 
+            XNamespace xNs = "http://fciit.ru/eisn/ruzdi/types/2.3"; //создание нэймспейса для документа
 
 
             XDocument xdoc = new XDocument(
@@ -29,7 +29,7 @@ namespace uploadnotif
 
         new XElement(xNs + "NotificationId", s2),             // описание тега NotificationId
 
-        new XElement(xNs + "NotificationData",                        // описание тега NotificationDataпп
+        new XElement(xNs + "NotificationData",                        // описание тега NotificationData
             new XAttribute("version", "2.3"),
 
 
