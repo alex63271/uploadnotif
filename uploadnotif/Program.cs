@@ -191,7 +191,7 @@ namespace uploadnotif
             package.pledgeNotificationPackage = new upl.pledgeNotificationPackageType();
             upl.pledgeNotificationListElementType pledgeNotificationListElement = new upl.pledgeNotificationListElementType();
             upl.senderTypeType sender = 0;
-            string guidp = Convert.ToString(Guid.NewGuid()); //генерируем гуид пкета
+            string guidp = Convert.ToString(Guid.NewGuid()); //генерируем гуид пакета
             package.pledgeNotificationPackage.packageId = guidp; //присваиваем пакету гуид
             package.pledgeNotificationPackage.senderType = sender; // присваиваем занчение senderType(0)
             package.pledgeNotificationPackage.uip = "000000000000000000000TEST"; //прописываем УИП
@@ -240,8 +240,8 @@ namespace uploadnotif
 
             string NotificationId = xmlUZ();    //вызывем генерацию xml
 
-            bool rez = signatur(NotificationId);   //подписываем xml
-            if (rez == true)
+            //bool rez = ;   //подписываем xml
+            if (signatur(NotificationId))
             {
                 string putzip = compr(NotificationId);  //архивируем xml и sig
                 upl.uploadNotificationPackageRequest package = Pack(putzip, NotificationId);    // формируем пакет
